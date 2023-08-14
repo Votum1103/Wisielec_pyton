@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialog_game</class>
+ <widget class="QDialog" name="dialog_game">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>677</width>
+    <height>574</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Futura</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #282836;</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_singleplayer">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>230</y>
+     <width>251</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>12</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <underline>false</underline>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #0BAEF5;
+	font-size: 18px;
+	text-align: right;
+    border: 1px solid #89959B;
+    border-radius: 10px;
+    background: qlineargradient(
+        x1: 0, y1: 0.5, x2: 1, y2: 0.5, stop: 0 #0BAEF5  stop: 0.3 #0BAEF5
+		stop: 0.301 #FCFCFC, stop: 1 #FCFCFC
+        );
+    padding: 20px;
+    }
+
+QPushButton:hover {
+    color: #FFFFFF;
+    background: qlineargradient(
+        x1: 0, y1: 0.5, x2: 1, y2: 0.5, stop: 0 #FCFCFC,  stop: 0.3 #FCFCFC
+		stop: 0.301 #0BAEF5, stop: 1 #0BAEF5
+        );
+    }
+
+QPushButton:pressed {
+    color: #E9AFEE;
+    border-style: inset;
+    background: qlineargradient(
+        x1: 0, y1: 0.5, x2: 1, y2: 0.5, stop: 0 #E9AFEE,  stop: 0.3 #E9AFEE
+		stop: 0.301 #F9E8FA stop: 1 #F9E8FA
+        );
+    }</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="text">
+    <string>SINGLEPLAYER</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>400</width>
+     <height>400</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_multiplayer">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>330</y>
+     <width>251</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <italic>false</italic>
+     <bold>true</bold>
+     <underline>false</underline>
+    </font>
+   </property>
+   <property name="mouseTracking">
+    <bool>false</bool>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #F27FFA;
+	text-align: right;
+	font-size: 18px;
+    border: 1px solid #89959B;
+    border-radius: 10px;
+    background: qlineargradient(
+        x1: 0, y1: 0.5, x2: 1, y2: 0.5, stop: 0 #F27FFA,  stop: 0.3 #F27FFA
+		stop: 0.301 #FCFCFC, stop: 1 #FCFCFC
+        );
+    padding: 20px;
+    }
+
+QPushButton:hover {
+    color: #FFFFFF;
+    background: qlineargradient(
+        x1: 0, y1: 0.5, x2: 1, y2: 0.5, stop: 0 #FCFCFC,  stop: 0.3 #FCFCFC
+		stop: 0.301 #F27FFA, stop: 1 #F27FFA
+        );
+    }
+
+QPushButton:pressed {
+    color: #E9AFEE;
+    border-style: inset;
+    background: qlineargradient(
+        x1: 0, y1: 0.5, x2: 1, y2: 0.5, stop: 0 #E9AFEE,  stop: 0.3 #E9AFEE
+		stop: 0.301 #F9E8FA stop: 1 #F9E8FA
+        );
+    }</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="text">
+    <string>MULTIPLAYER</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>400</width>
+     <height>400</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_instruction">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>500</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    color: #565A5B;
+    border: 1px solid black;
+	font-size: 14px;
+    border-radius: 10px;
+    background-color: #C5DEEB;
+    padding: 3px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #A5E2FF
+        );
+    }
+
+QPushButton:pressed {
+    color: #0B5AE1;
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #D7B5F9
+        );
+    }</string>
+   </property>
+   <property name="text">
+    <string>INSTRUKCJA</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Wisielec_napis">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>90</y>
+     <width>211</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>.AppleSystemUIFont</family>
+     <pointsize>55</pointsize>
+     <kerning>false</kerning>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: #0BAEF5;
+background-color:transparent;</string>
+   </property>
+   <property name="text">
+    <string>Wisielec</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_multi_pict">
+   <property name="geometry">
+    <rect>
+     <x>233</x>
+     <y>350</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Downloads/mul.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_single_pict">
+   <property name="geometry">
+    <rect>
+     <x>237</x>
+     <y>235</y>
+     <width>41</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../../Downloads/sing.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_instruction">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>170</y>
+     <width>611</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Helvetica</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;</string>
+   </property>
+   <property name="title">
+    <string>Instrukcja</string>
+   </property>
+   <widget class="QTextBrowser" name="textBrowser_instruction_text">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>581</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;1.  W grze multiplayer gracz pierwszy podaje słowo i oprzekazuje urządzenie graczowi drugiemu,  który zgaduje słowo wpisane przez gracza pierwszego. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;2.  W grze singleplayer gracz zgaduje wymyślone przez komputer słowo. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;3.  Niedopuszczalne jest definiowanie słów z myślnikami czy znakami białymi.   &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;4.  Słowa zgadujemy,  wpisując po jednej literze alfabetu polskiego. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt; color:#ffffff;&quot;&gt;5.  Jeśli domyślasz się,  jakie będzie słowo zanim zgadniesz wszystkie litery, możesz podjąć próbę odgadnięcia go,  wciskając przycisk &amp;quot;tak&amp;quot; w polu &amp;quot;Czy chcesz odgadnąć hasło&amp;quot;,  a następnie wpisując słowo.  W razie nieudanej próby zostanie odjęte 5 pkt. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_instruction_wroc">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>310</y>
+      <width>113</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    color: #565A5B;
+    border: 1px solid black;
+	font-size: 14px;
+    border-radius: 10px;
+    background-color: #C5DEEB;
+    padding: 3px;
+    }
+
+QPushButton:hover {
+    background: qradialgradient(
+        cx: 0.3, cy: -0.4, fx: 0.3, fy: -0.4,
+        radius: 1.35, stop: 0 #fff, stop: 1 #A5E2FF
+        );
+    }
+
+QPushButton:pressed {
+    color: #0B5AE1;
+    border-style: inset;
+    background: qradialgradient(
+        cx: 0.4, cy: -0.1, fx: 0.4, fy: -0.1,
+        radius: 1.35, stop: 0 #fff, stop: 1 #D7B5F9
+        );
+    }</string>
+    </property>
+    <property name="text">
+     <string>Wróć</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -99,7 +99,7 @@ class Ui_Dialog_multi(object):
 
     def play_music_after_getting_letter(self):
         self.player1 = QMediaPlayer()
-        url = QUrl.fromLocalFile("When_you_get_letter.wav")
+        url = QUrl.fromLocalFile("music\When_you_get_letter.wav")
         content = QMediaContent(url)
         self.player1.setMedia(content)
         self.player1.setVolume(30)

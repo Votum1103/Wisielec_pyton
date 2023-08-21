@@ -74,17 +74,19 @@ class Ui_Dialog_single(object):
                   self.szub9_label,
                   self.szub10_label,
                   self.szub11_label]
-
         if self.photo_index == 0 and letter.lower() not in self.given_word:
             photos[self.photo_index].setVisible(True)
             self.photo_index += 1
-        elif letter.lower() not in self.given_word:
+        elif letter.lower() not in self.given_word and self.photo_index < 11:
             photos[self.photo_index-1].setVisible(False)
             photos[self.photo_index].setVisible(True)
             self.photo_index += 1
         elif letter.lower() not in self.given_word and self.photo_index == 11:
             photos[self.photo_index-1].setVisible(False)
             self.label_przegrales.show()
+            self.question_pushButton.setEnabled(False)
+            for list in self.button_names:
+                list[0].setEnabled(False)
 
     def hide_label(self):
         self.label_wrong_word.hide()

@@ -98,6 +98,9 @@ class Ui_Dialog_multi(object):
         elif letter.lower() not in self.given_word and self.photo_index == 11:
             photos[self.photo_index-1].setVisible(False)
             self.label_przegrales.show()
+            self.question_pushButton.setEnabled(False)
+            for list in self.button_names:
+                list[0].setEnabled(False)
 
     def play_music_after_getting_letter(self):
         self.player1 = QMediaPlayer()

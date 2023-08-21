@@ -56,6 +56,9 @@ class Ui_Dialog_multi(object):
                 self.keyword_label.setText(self.word)
             if self.word.capitalize().replace(" ", "") == self.given_word.capitalize().replace(" ", ""):
                 self.label_brawo.show()
+                self.question_pushButton.setEnabled(False)
+                for list in self.button_names:
+                    list[0].setEnabled(False)
 
     def show_groupbox(self):
         self.groupBox_guess_word.show()
@@ -66,6 +69,9 @@ class Ui_Dialog_multi(object):
             self.groupBox_guess_word.hide()
             self.keyword_label.setText(self.guess_word.upper())
             self.label_brawo.show()
+            self.question_pushButton.setEnabled(False)
+            for list in self.button_names:
+                list[0].setEnabled(False)
         else:
             self.timer.start(800)
             self.linedit_guess_word.hide()

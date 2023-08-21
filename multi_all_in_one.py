@@ -8,7 +8,7 @@ from python_multi_part.multi_input_word_groupbox import groupbox_input_word
 from python_both_parts.both_guess_word_groupbox import groupbox_guess_word
 from python_both_parts.both_szubienica_photos import zdj
 from python_both_parts.both_music import play_music_in_game
-from python_both_parts.both_end_brawo import show_brawo
+from python_both_parts.both_end_brawo import show_brawo_przegrales
 
 
 class Ui_Dialog_multi(object):
@@ -28,7 +28,7 @@ class Ui_Dialog_multi(object):
         groupbox_guess_word(self, Dialog)
         self.photo_index = 0
         play_music_in_game(self, Dialog)
-        show_brawo(self, Dialog)
+        show_brawo_przegrales(self, Dialog)
 
     def hide_input_groupbox(self):
         self.groupBox_input_word.setVisible(False)
@@ -54,7 +54,7 @@ class Ui_Dialog_multi(object):
                 self.word = self.word[:index_space] + \
                     letter.capitalize() + self.word[index_space + 1:]
                 self.keyword_label.setText(self.word)
-            if self.word.capitalize().replace(" ", "") == self.given_word.capitalize():
+            if self.word.capitalize().replace(" ", "") == self.given_word.capitalize().replace(" ", ""):
                 self.label_brawo.show()
 
     def show_groupbox(self):
@@ -88,18 +88,20 @@ class Ui_Dialog_multi(object):
                   self.szub9_label,
                   self.szub10_label,
                   self.szub11_label]
-
         if self.photo_index == 0 and letter.lower() not in self.given_word:
             photos[self.photo_index].setVisible(True)
             self.photo_index += 1
-        elif letter.lower() not in self.given_word:
+        elif letter.lower() not in self.given_word and self.photo_index < 11:
             photos[self.photo_index-1].setVisible(False)
             photos[self.photo_index].setVisible(True)
             self.photo_index += 1
+        elif letter.lower() not in self.given_word and self.photo_index == 11:
+            photos[self.photo_index-1].setVisible(False)
+            self.label_przegrales.show()
 
     def play_music_after_getting_letter(self):
         self.player1 = QMediaPlayer()
-        url = QUrl.fromLocalFile("music\When_you_get_letter.wav")
+        url = QUrl.fromLocalFile("music/When_you_get_letter.wav")
         content = QMediaContent(url)
         self.player1.setMedia(content)
         self.player1.setVolume(30)

@@ -8,7 +8,7 @@ from python_both_parts.both_szubienica_photos import zdj
 from python_both_parts.both_guess_word_groupbox import groupbox_guess_word
 import random
 from python_both_parts.both_music import play_music_in_game
-from python_both_parts.both_end_brawo import show_brawo
+from python_both_parts.both_end_brawo import show_brawo_przegrales
 
 
 class Ui_Dialog_single(object):
@@ -20,7 +20,6 @@ class Ui_Dialog_single(object):
         Dialog_single.setStyleSheet("background-color: white")
         Dialog_single.setWindowTitle(_translate("Dialog_single", "Wisielec"))
         question_pushButton(self, Dialog_single)
-        # wisielec_label(self, Dialog_single)
         keyword_label(self, Dialog_single)
         zdj(self, Dialog_single)
         push_button_style(self, Dialog_single)
@@ -28,7 +27,7 @@ class Ui_Dialog_single(object):
         groupbox_guess_word(self, Dialog_single)
         self.photo_index = 0
         play_music_in_game(self, Dialog_single)
-        show_brawo(self, Dialog_single)
+        show_brawo_przegrales(self, Dialog_single)
 
     def assignVariableSingle(self):
         plik = "data/dane.txt"
@@ -46,7 +45,7 @@ class Ui_Dialog_single(object):
                 self.word = self.word[:index_space] + \
                     letter.capitalize() + self.word[index_space + 1:]
                 self.keyword_label.setText(self.word)
-            if self.word.capitalize().replace(" ", "") == self.given_word.capitalize():
+            if self.word.capitalize().replace(" ", "") == self.given_word.capitalize().replace(" ", ""):
                 self.label_brawo.show()
 
     def show_groupbox(self):
@@ -83,6 +82,9 @@ class Ui_Dialog_single(object):
             photos[self.photo_index-1].setVisible(False)
             photos[self.photo_index].setVisible(True)
             self.photo_index += 1
+        elif letter.lower() not in self.given_word and self.photo_index == 11:
+            photos[self.photo_index-1].setVisible(False)
+            self.label_przegrales.show()
 
     def hide_label(self):
         self.label_wrong_word.hide()
@@ -91,7 +93,7 @@ class Ui_Dialog_single(object):
 
     def play_music_after_getting_letter(self):
         self.player1 = QMediaPlayer()
-        url = QUrl.fromLocalFile("music\When_you_get_letter.wav")
+        url = QUrl.fromLocalFile("music/When_you_get_letter.wav")
         content = QMediaContent(url)
         self.player1.setMedia(content)
         self.player1.setVolume(30)

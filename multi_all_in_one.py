@@ -8,7 +8,7 @@ from python_multi_part.multi_input_word_groupbox import groupbox_input_word
 from python_both_parts.both_guess_word_groupbox import groupbox_guess_word
 from python_both_parts.both_szubienica_photos import zdj
 from python_both_parts.both_music import play_music_in_game
-from python_both_parts.both_end_brawo import show_brawo_przegrales
+from python_both_parts.both_end_brawo_przegrales import show_brawo_przegrales
 
 
 class Ui_Dialog_multi(object):
@@ -83,6 +83,7 @@ class Ui_Dialog_multi(object):
         self.groupBox_guess_word.hide()
 
     def show_wisielec(self, letter):
+        _translate = QtCore.QCoreApplication.translate
         photos = [self.szub1_label,
                   self.szub2_label,
                   self.szub3_label,
@@ -104,6 +105,8 @@ class Ui_Dialog_multi(object):
         elif letter.lower() not in self.given_word and self.photo_index == 11:
             photos[self.photo_index-1].setVisible(False)
             self.label_przegrales.show()
+            self.label_przegrales.setText(_translate(
+                "Dialog", f"Przegrałeś\n hasło to: {self.given_word.upper()}"))
             self.question_pushButton.setEnabled(False)
             for list in self.button_names:
                 list[0].setEnabled(False)

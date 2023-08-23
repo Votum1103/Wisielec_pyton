@@ -21,7 +21,6 @@ def show_brawo_przegrales(self, Dialog):
         "label_przegrales")
     self.label_przegrales.setFont(QtGui.QFont("Arial", 20))
     self.label_przegrales.setAlignment(QtCore.Qt.AlignCenter)
-    self.label_przegrales.setText(_translate("Dialog", "Niestety przegrałeś"))
     self.label_przegrales.setStyleSheet(
         "color: grey; background-color: white; border: 0px ")
     self.label_przegrales.hide()

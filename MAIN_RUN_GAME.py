@@ -3,39 +3,63 @@ from initial_menu_all_in_one import Ui_dialog_game
 from multi_all_in_one import Ui_Dialog_multi
 from single_all_in_one import Ui_Dialog_single
 
-class CommonWindow(QtWidgets.QDialog):
-    def __init__(self, ui_class, open_function, stop_music_function):
+
+class FirstWindow(QtWidgets.QDialog, Ui_dialog_game):
+    def __init__(self):
         super().__init__()
         self.setupUi(self)
-        if hasattr(self, 'play_again_pushbutton'):
-            self.play_again_pushbutton.clicked.connect(self.open_window_from_this)
-            self.play_again_pushbutton.clicked.connect(self.stop_music_after_click)
-        self.ui_class = ui_class
-        self.open_function = open_function
-        self.stop_music_function = stop_music_function
+        self.pushButton_singleplayer.clicked.connect(
+            self.openThirdWindowFromSingle)
+        self.pushButton_multiplayer.clicked.connect(
+            self.openSecondWindowFromMulti)
 
-    def open_window_from_this(self):
+    def openThirdWindowFromSingle(self):
         self.hide()
-        self.menu_window = self.open_function()
-        self.menu_window.show()
+        self.singleWindow = ThirdWindow()
+        self.singleWindow.show()
+        self.singleWindow.assignVariableSingle()
 
-    def stop_music_after_click(self):
-        self.stop_music_function()
+    def openSecondWindowFromMulti(self):
+        self.hide()
+        self.multiWindow = SecondWindow()
+        self.multiWindow.show()
 
-class FirstWindow(CommonWindow, Ui_dialog_game):
+
+class SecondWindow(QtWidgets.QDialog, Ui_Dialog_multi):
     def __init__(self):
-        super().__init__(Ui_dialog_game, self.open_first_window, self.stop_music_after_click)
+        super().__init__()
+        self.setupUi(self)
+        self.play_again_pushbutton.clicked.connect(
+            self.openFirstWindow)
+        self.play_again_pushbutton.clicked.connect(
+            self.stopMusicAfterClick)
 
-    def open_first_window(self):
-        return FirstWindow()
+    def openFirstWindow(self):
+        self.hide()
+        self.menuWindow = FirstWindow()
+        self.menuWindow.show()
 
-class SecondWindow(CommonWindow, Ui_Dialog_multi):
+    def stopMusicAfterClick(self):
+        self.player.stop()
+
+
+class ThirdWindow(QtWidgets.QDialog, Ui_Dialog_single):
     def __init__(self):
-        super().__init__(Ui_Dialog_multi, self.open_first_window, self.stop_music_after_click)
+        super().__init__()
+        self.setupUi(self)
+        self.play_again_pushbutton.clicked.connect(
+            self.openFirstWindow)
+        self.play_again_pushbutton.clicked.connect(
+            self.stopMusicAfterClick)
 
-class ThirdWindow(CommonWindow, Ui_Dialog_single):
-    def __init__(self):
-        super().__init__(Ui_Dialog_single, self.open_first_window, self.stop_music_after_click)
+    def openFirstWindow(self):
+        self.hide()
+        self.menuWindow = FirstWindow()
+        self.menuWindow.show()
+
+    def stopMusicAfterClick(self):
+        self.player.stop()
+
 
 if __name__ == "__main__":
     import sys

@@ -31,11 +31,16 @@ class SecondWindow(QtWidgets.QDialog, Ui_Dialog_multi):
         self.setupUi(self)
         self.play_again_pushbutton.clicked.connect(
             self.openFirstWindowFromMulti)
+        self.play_again_pushbutton.clicked.connect(
+            self.stopMusicAfterClick)
 
     def openFirstWindowFromMulti(self):
         self.hide()
         self.menuWindow = FirstWindow()
         self.menuWindow.show()
+
+    def stopMusicAfterClick(self):
+        self.player.stop()
 
 
 class ThirdWindow(QtWidgets.QDialog, Ui_Dialog_single):
@@ -44,12 +49,16 @@ class ThirdWindow(QtWidgets.QDialog, Ui_Dialog_single):
         self.setupUi(self)
         self.play_again_pushbutton.clicked.connect(
             self.openFirstWindowFromSingle)
+        self.play_again_pushbutton.clicked.connect(
+            self.stopMusicAfterClick)
 
     def openFirstWindowFromSingle(self):
         self.hide()
         self.menuWindow = FirstWindow()
         self.menuWindow.show()
 
+    def stopMusicAfterClick(self):
+        self.player.stop()
 
 if __name__ == "__main__":
     import sys

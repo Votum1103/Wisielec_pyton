@@ -116,7 +116,7 @@ class Ui_Dialog_multi(object):
         url = QUrl.fromLocalFile("music/When_you_get_letter.wav")
         content = QMediaContent(url)
         self.player1.setMedia(content)
-        self.player1.setVolume(30)
+        self.player1.setVolume(20)
         self.player1.play()
 
 

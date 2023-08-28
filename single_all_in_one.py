@@ -31,7 +31,6 @@ class Ui_Dialog_single(object):
         show_brawo_przegrales(self, Dialog_single)
         show_again_pushbutton(self, Dialog_single)
 
-
     def assignVariableSingle(self):
         plik = "data/dane.txt"
         plik = open(plik, "r", encoding='utf8')
@@ -50,6 +49,7 @@ class Ui_Dialog_single(object):
                 self.keyword_label.setText(self.word)
             if self.word.capitalize().replace(" ", "") == self.given_word.capitalize().replace(" ", ""):
                 self.label_brawo.show()
+                self.play_again_pushbutton.show()
                 self.question_pushButton.setEnabled(False)
                 for list in self.button_names:
                     list[0].setEnabled(False)
@@ -63,6 +63,7 @@ class Ui_Dialog_single(object):
             self.groupBox_guess_word.hide()
             self.keyword_label.setText(self.guess_word.upper())
             self.label_brawo.show()
+            self.play_again_pushbutton.show()
             self.question_pushButton.setEnabled(False)
             for list in self.button_names:
                 list[0].setEnabled(False)
@@ -96,6 +97,7 @@ class Ui_Dialog_single(object):
             self.label_przegrales.show()
             self.label_przegrales.setText(_translate(
                 "Dialog", f"Przegrałeś\n hasło to: {self.given_word.upper()}"))
+            self.play_again_pushbutton.show()
             self.question_pushButton.setEnabled(False)
             for list in self.button_names:
                 list[0].setEnabled(False)

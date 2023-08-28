@@ -34,6 +34,6 @@ def show_again_pushbutton(self, Dialog):
                                              "   background: #C5DEEB\n"
                                              "    }background-color:silver;")
     self.play_again_pushbutton.setObjectName("play_again_pushbutton")
-    # self.play_again_pushbutton.clicked.connect()
+    self.play_again_pushbutton.hide()
     self.play_again_pushbutton.setText(
         _translate("Dialog", "Zagraj jeszcze raz"))

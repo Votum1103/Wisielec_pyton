@@ -29,8 +29,10 @@ class SecondWindow(QtWidgets.QDialog, Ui_Dialog_multi):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.play_again_pushbutton.clicked.connect(
+            self.openFirstWindowFromMulti)
 
-    def openFirstWindowFromSingle(self):
+    def openFirstWindowFromMulti(self):
         self.hide()
         self.menuWindow = FirstWindow()
         self.menuWindow.show()

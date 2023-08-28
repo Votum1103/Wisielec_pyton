@@ -30,11 +30,23 @@ class SecondWindow(QtWidgets.QDialog, Ui_Dialog_multi):
         super().__init__()
         self.setupUi(self)
 
+    def openFirstWindowFromSingle(self):
+        self.hide()
+        self.menuWindow = FirstWindow()
+        self.menuWindow.show()
+
 
 class ThirdWindow(QtWidgets.QDialog, Ui_Dialog_single):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        self.play_again_pushbutton.clicked.connect(
+            self.openFirstWindowFromSingle)
+
+    def openFirstWindowFromSingle(self):
+        self.hide()
+        self.menuWindow = FirstWindow()
+        self.menuWindow.show()
 
 
 if __name__ == "__main__":

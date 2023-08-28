@@ -9,6 +9,7 @@ from python_both_parts.both_guess_word_groupbox import groupbox_guess_word
 import random
 from python_both_parts.both_music import play_music_in_game
 from python_both_parts.both_end_brawo_przegrales import show_brawo_przegrales
+from python_both_parts.both_again_pushbutton import show_again_pushbutton
 
 
 class Ui_Dialog_single(object):
@@ -28,6 +29,8 @@ class Ui_Dialog_single(object):
         self.photo_index = 0
         play_music_in_game(self, Dialog_single)
         show_brawo_przegrales(self, Dialog_single)
+        show_again_pushbutton(self, Dialog_single)
+
 
     def assignVariableSingle(self):
         plik = "data/dane.txt"

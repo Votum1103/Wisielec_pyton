@@ -8,7 +8,7 @@ def connected_with_instruction(self, dialog_game):
     font.setPointSize(-1)
     self.pushButton_instruction = QtWidgets.QPushButton(dialog_game)
     self.pushButton_instruction.setGeometry(
-        QtCore.QRect(480, 480, 151, 41))
+        QtCore.QRect(490, 480, 151, 41))
     self.pushButton_instruction.setFont(font)
     self.pushButton_instruction.setStyleSheet("QPushButton {\n"
                                               "    color: #565A5B;\n"

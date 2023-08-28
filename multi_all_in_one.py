@@ -9,6 +9,7 @@ from python_both_parts.both_guess_word_groupbox import groupbox_guess_word
 from python_both_parts.both_szubienica_photos import zdj
 from python_both_parts.both_music import play_music_in_game
 from python_both_parts.both_end_brawo_przegrales import show_brawo_przegrales
+from python_both_parts.both_again_pushbutton import show_again_pushbutton
 
 
 class Ui_Dialog_multi(object):
@@ -29,6 +30,7 @@ class Ui_Dialog_multi(object):
         self.photo_index = 0
         play_music_in_game(self, Dialog)
         show_brawo_przegrales(self, Dialog)
+        show_again_pushbutton(self, Dialog)
 
     def hide_input_groupbox(self):
         self.groupBox_input_word.setVisible(False)
@@ -56,6 +58,7 @@ class Ui_Dialog_multi(object):
                 self.keyword_label.setText(self.word)
             if self.word.capitalize().replace(" ", "") == self.given_word.capitalize().replace(" ", ""):
                 self.label_brawo.show()
+                self.play_again_pushbutton.show()
                 self.question_pushButton.setEnabled(False)
                 for list in self.button_names:
                     list[0].setEnabled(False)
@@ -69,6 +72,7 @@ class Ui_Dialog_multi(object):
             self.groupBox_guess_word.hide()
             self.keyword_label.setText(self.guess_word.upper())
             self.label_brawo.show()
+            self.play_again_pushbutton.show()
             self.question_pushButton.setEnabled(False)
             for list in self.button_names:
                 list[0].setEnabled(False)
@@ -105,6 +109,7 @@ class Ui_Dialog_multi(object):
         elif letter.lower() not in self.given_word and self.photo_index == 11:
             photos[self.photo_index-1].setVisible(False)
             self.label_przegrales.show()
+            self.play_again_pushbutton.show()
             self.label_przegrales.setText(_translate(
                 "Dialog", f"Przegrałeś\n hasło to: {self.given_word.upper()}"))
             self.question_pushButton.setEnabled(False)

@@ -71,3 +71,29 @@ def groupbox_guess_word(self, Dialog):
     self.timer = QtCore.QTimer(Dialog)
     self.timer.timeout.connect(self.hide_label)
     self.timer.setSingleShot(True)
+
+
+def show_groupbox(self):
+    self.groupBox_guess_word.show()
+
+
+def hide_label(self):
+    self.label_wrong_word.hide()
+    self.linedit_guess_word.show()
+    self.groupBox_guess_word.hide()
+
+
+def try_to_guess(self):
+    self.guess_word = self.linedit_guess_word.text()
+    if self.given_word.upper() == self.guess_word.upper():
+        self.groupBox_guess_word.hide()
+        self.keyword_label.setText(self.guess_word.upper())
+        self.label_brawo.show()
+        self.play_again_pushbutton.show()
+        self.question_pushButton.setEnabled(False)
+        for list in self.button_names:
+            list[0].setEnabled(False)
+    else:
+        self.timer.start(800)
+        self.linedit_guess_word.hide()
+        self.label_wrong_word.show()

@@ -64,3 +64,5 @@ def groupbox_input_word(self, Dialog):
     self.label_input_word_question.setText(
         _translate("Dialog",  "<html><head/><body><p align=\"center\"><span style=\" color: white;\">Podaj hasło do zgadnięcia</span></p></body></html>"))
 
+def hide_input_groupbox(self):
+    self.groupBox_input_word.setVisible(False)

@@ -15,3 +15,18 @@ def keyword_label(self, Dialog):
         "color: grey; background-color:transparent;")
     self.keyword_label.setAlignment(QtCore.Qt.AlignCenter)
     self.keyword_label.setObjectName("keyword_label")
+
+
+def addToWord(self, letter):
+    for index, char in enumerate(self.given_word):
+        if char == letter.lower() or char == letter.capitalize():
+            index_space = index * 2
+            self.word = self.word[:index_space] + \
+                letter.capitalize() + self.word[index_space + 1:]
+            self.keyword_label.setText(self.word)
+        if self.word.capitalize().replace(" ", "") == self.given_word.capitalize().replace(" ", ""):
+            self.label_brawo.show()
+            self.play_again_pushbutton.show()
+            self.question_pushButton.setEnabled(False)
+            for list in self.button_names:
+                list[0].setEnabled(False)

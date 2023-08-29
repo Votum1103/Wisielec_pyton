@@ -30,3 +30,34 @@ def zdj(self, Dialog):
         list[0].setPixmap(QtGui.QPixmap(list[1]))
         list[0].setScaledContents(True)
         list[0].setVisible(False)
+
+
+def show_wisielec(self, letter):
+    _translate = QtCore.QCoreApplication.translate
+    photos = [self.szub1_label,
+              self.szub2_label,
+              self.szub3_label,
+              self.szub4_label,
+              self.szub5_label,
+              self.szub6_label,
+              self.szub7_label,
+              self.szub8_label,
+              self.szub9_label,
+              self.szub10_label,
+              self.szub11_label]
+    if self.photo_index == 0 and letter.lower() not in self.given_word:
+        photos[self.photo_index].setVisible(True)
+        self.photo_index += 1
+    elif letter.lower() not in self.given_word and self.photo_index < 11:
+        photos[self.photo_index-1].setVisible(False)
+        photos[self.photo_index].setVisible(True)
+        self.photo_index += 1
+    elif letter.lower() not in self.given_word and self.photo_index == 11:
+        photos[self.photo_index-1].setVisible(False)
+        self.label_przegrales.show()
+        self.play_again_pushbutton.show()
+        self.label_przegrales.setText(_translate(
+            "Dialog", f"Przegrałeś\n hasło to: {self.given_word.upper()}"))
+        self.question_pushButton.setEnabled(False)
+        for list in self.button_names:
+            list[0].setEnabled(False)
